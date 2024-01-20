@@ -308,3 +308,29 @@ showDinosButton.addEventListener("click", (e) => {
   const dinoTypePets = filter(pets, "dino");
   cardsOnDom(dinoTypePets);
 });
+
+
+//target form on DOM
+const form = document.querySelector("form");
+
+//function to yoink push and repaint
+const addPet = (e) => {
+  e.preventDefault(); // remember this for future forms
+
+ const addPetObj = {
+  id: pets.length + 1,
+  name: document.querySelector("#name").value,
+  type: document.querySelector("#type").value,
+  color: document.querySelector("#color").value,
+  specialSkill: document.querySelector("#specialSkills").value,
+  image: document.querySelector("#image").value,
+
+ }
+
+ pets.push(addPetObj);
+ cardsOnDom(pets);
+ form.reset();
+}
+
+// form submit listener w/ callback
+form.addEventListener('submit', addPet);

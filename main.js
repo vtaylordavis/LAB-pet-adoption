@@ -323,14 +323,18 @@ const addPet = (e) => {
   type: document.querySelector("#type").value,
   color: document.querySelector("#color").value,
   specialSkill: document.querySelector("#specialSkills").value,
-  image: document.querySelector("#image").value,
-
+  imageUrl: document.querySelector("#imageUrl").value,
  }
 
  pets.push(addPetObj);
  cardsOnDom(pets);
  form.reset();
 }
+//image uploading script
+//const loadFile = function(event) {
+ // const image = document.getElementById("output");
+//  image.src = URL.createObjectURL(event.target.files[0]);
+//}
 
 // form submit listener w/ callback
 form.addEventListener('submit', addPet);
